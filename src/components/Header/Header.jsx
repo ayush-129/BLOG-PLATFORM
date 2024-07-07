@@ -57,7 +57,7 @@ function Header() {
                 >{item.name}</button>
               </li>
             ) : null
-            )}
+            )}   
             {authStatus && (
               <li>
                 <LogoutBtn />
