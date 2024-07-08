@@ -19,7 +19,7 @@ export class Service {
       return await this.databases.createDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        slug, // document id 
+        slug, // document id
         {
           title,
           content,
@@ -116,16 +116,19 @@ export class Service {
     }
   }
 
-  async getFilePreview(fileId) {
-    try {
-      console.log("debugging");
-      return await this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
-    } catch (error) {
-      console.error("Appwrite service :: getFilePreview :: error", error);
-      return false;
-    }
+  // async getFilePreview(fileId) {
+  //   try {
+  //     console.log("debugging");
+  //     return await this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
+  //   } catch (error) {
+  //     console.error("Appwrite service :: getFilePreview :: error", error);
+  //     return false;
+  //   }
+  // }
+
+  getFilePreview(fileId) {
+    return this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
   }
-  
 }
 
 const service = new Service();
