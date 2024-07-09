@@ -20,8 +20,10 @@ function Login() {
                 const userData = await authService.getCurrentUser()
                 if(userData) dispatch(authLogin(userData));
                 navigate("/")
+                
             }
         } catch (error) {
+            
             setError(error.message)
         }
     }
@@ -46,11 +48,11 @@ function Login() {
                         Sign Up
                     </Link>
         </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        {error && <p className="text-red-600 mt-8 border-l-red-600 text-center">{error}</p>}
         <form onSubmit={handleSubmit(login)} className='mt-8'>
             <div className='space-y-5'>
                 <Input
-                label="Email: "
+                label=""
                 placeholder="Enter your email"
                 type="email"
                 {...register("email", {
@@ -62,7 +64,7 @@ function Login() {
                 })}
                 />
                 <Input
-                label="Password: "
+                label=""
                 type="password"
                 placeholder="Enter your password"
                 {...register("password", {

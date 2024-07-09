@@ -21,19 +21,21 @@ function App() {
         }
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [dispatch]);
 
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
-      <div className="w-full block">
+    <div>
+      <header className="fixed top-0 left-0 w-full z-20">
         <Header />
-        <main>
-          TODO: <Outlet />
-        </main>
+      </header>
+      <main className="flex-grow pt-16 pb-16 overflow-auto mt-15 mb-20 mx-0 left-0 right-0">
+        <Outlet />
+      </main>
+      <footer className="fixed bottom-0 left-0 w-full z-20">
         <Footer />
-      </div>
+      </footer>
     </div>
-  ) : null; // improvement needed
+  ) : null;
 }
 
 export default App;
