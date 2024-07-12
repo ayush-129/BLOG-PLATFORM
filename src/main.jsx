@@ -18,9 +18,9 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "", element: <Home /> },
       {
-        path: "/login",
+        path: "login",
         element: (
           <AuthLayout authentication={false}>
             <Login />
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/signup",
+        path: "signup",
         element: (
           <AuthLayout authentication={false}>
             <Signup />
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/all-posts",
+        path: "all-posts",
         element: (
           <AuthLayout authentication>
             <AllPosts />
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/add-post",
+        path: "add-post",
         element: (
           <AuthLayout authentication>
             <AddPost />
@@ -52,14 +52,14 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/edit-post/:slug",
+        path: "edit-post/:slug",
         element: (
           <AuthLayout authentication>
             <EditPost />
           </AuthLayout>
         ),
       },
-      { path: "/post/:slug", element: <Post /> },
+      { path: "post/:slug", element: <Post /> },
     ],
   },
 ]);
